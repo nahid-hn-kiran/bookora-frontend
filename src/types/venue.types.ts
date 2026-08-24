@@ -1,15 +1,13 @@
 export interface IVenue {
-  data: {
-    id: string;
-    name: string;
-    description?: string | null;
-    address?: string | null;
-    city?: string | null;
-    country?: string | null;
-    status?: string;
-    createdAt?: string;
-    updatedAt?: string;
-  };
+  id: string;
+  name: string;
+  description?: string | null;
+  address?: string | null;
+  city?: string | null;
+  country?: string | null;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface ICreateVenuePayload {
