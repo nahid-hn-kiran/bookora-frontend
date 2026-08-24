@@ -20,3 +20,10 @@ export interface IDashboardUser {
   email: string;
   role: UserRole;
 }
+
+export interface IDashboardStats {
+  totalVenues: number;
+  totalRooms: number;
+  totalTimeSlots: number;
+  totalBookings: number;
+}

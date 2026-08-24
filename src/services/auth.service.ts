@@ -5,7 +5,6 @@ import type {
   ILoginPayload,
   IRegisterPayload,
   IResetPasswordPayload,
-  IUser,
 } from "@/types/auth.types";
 
 const loginUser = async (payload: ILoginPayload) => {
@@ -27,22 +26,6 @@ const resetPassword = async (payload: IResetPasswordPayload) => {
   const response = await api.post("/auth/reset-password", payload);
   return response.data;
 };
-
-interface MyProfileResponse {
-  success: boolean;
-  message: string;
-  data: IUser;
-}
-
-// export async function getCurrentUser(): Promise<IUser | null> {
-//   try {
-//     const response = await serverFetch<MyProfileResponse>("/auth/my-profile");
-
-//     return response.data;
-//   } catch {
-//     return null;
-//   }
-// }
 
 export const authService = {
   loginUser,
