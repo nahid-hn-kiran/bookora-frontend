@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState } from "react";
@@ -36,10 +37,10 @@ export function VenueForm() {
 
       const result = await venueService.createVenue({
         name: name.trim(),
-        description: description.trim() || undefined,
-        address: address.trim() || undefined,
-        city: city.trim() || undefined,
-        country: country.trim() || undefined,
+        description: description.trim(),
+        address: address.trim(),
+        city: city.trim(),
+        country: country.trim(),
       });
 
       if (!result.success) {

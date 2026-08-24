@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-
 import { VenueForm } from "@/components/modules/auth/dashboard/venues/VenueForm";
 
 export default function NewVenuePage() {

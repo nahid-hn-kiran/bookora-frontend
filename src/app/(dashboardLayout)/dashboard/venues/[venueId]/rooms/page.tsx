@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 
 import { venueServerService } from "@/services/venue.server.service";
 import { roomServerService } from "@/services/room.server.service";
-
 import { RoomList } from "@/components/modules/auth/dashboard/rooms/RoomList";
 
 interface RoomsPageProps {

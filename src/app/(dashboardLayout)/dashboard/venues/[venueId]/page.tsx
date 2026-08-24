@@ -10,6 +10,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { venueServerService } from "@/services/venue.server.service";
+import { DeleteVenueButton } from "@/components/modules/auth/dashboard/venues/DeleteVenueButton";
 
 interface VenueDetailsPageProps {
   params: Promise<{
@@ -84,12 +85,15 @@ export default async function VenueDetailsPage({
             </div>
           </div>
 
-          <Button asChild variant="outline">
-            <Link href={`/dashboard/venues/${venue.id}/edit`}>
-              <Pencil className="size-4" />
-              Edit venue
-            </Link>
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button asChild variant="outline">
+              <Link href={`/dashboard/venues/${venue.id}/edit`}>
+                Edit venue
+              </Link>
+            </Button>
+
+            <DeleteVenueButton venueId={venue.id} venueName={venue.name} />
+          </div>
         </div>
       </div>
 
