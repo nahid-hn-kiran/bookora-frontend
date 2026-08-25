@@ -28,7 +28,6 @@ const stats = [
 ];
 
 export default function DashboardPage() {
-  console.log("Dashboard Page");
   return (
     <div className="space-y-8">
       <div>
