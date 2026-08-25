@@ -23,12 +23,10 @@ export type UserRole = "USER" | "ADMIN" | "SUPER_ADMIN";
 export type UserStatus = "BLOCKED" | "DELETED" | "ACTIVE";
 
 export interface IUser {
-  data: {
-    id: string;
-    name: string;
-    email: string;
-    role: UserRole;
-    status: UserStatus;
-    isDeleted: boolean;
-  };
+  id: string;
+  name: string;
+  email: string;
+  role: UserRole;
+  status: UserStatus;
+  isDeleted: boolean;
 }

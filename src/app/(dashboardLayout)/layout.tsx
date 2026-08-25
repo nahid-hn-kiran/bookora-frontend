@@ -11,15 +11,15 @@ export default async function DashboardLayout({
 }>) {
   const user = await getCurrentUser();
 
-  if (!user?.data) {
+  if (!user) {
     return null;
   }
 
   const dashboardUser: IDashboardUser = {
-    id: user.data.id,
-    name: user.data.name,
-    email: user.data.email,
-    role: user.data.role,
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
   };
 
   return (
