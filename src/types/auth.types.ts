@@ -26,7 +26,10 @@ export interface IUser {
   id: string;
   name: string;
   email: string;
-  role: UserRole;
+  image: string | null;
   status: UserStatus;
+  role: UserRole;
   isDeleted: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
