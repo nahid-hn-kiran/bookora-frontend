@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { CalendarDays, LayoutDashboard, UserRound } from "lucide-react";
+import {
+  CalendarDays,
+  LayoutDashboard,
+  LockKeyhole,
+  UserRound,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -22,6 +27,11 @@ const navigation = [
     name: "Profile",
     href: "/me/profile",
     icon: UserRound,
+  },
+  {
+    name: "Security",
+    href: "/me/security",
+    icon: LockKeyhole,
   },
 ];
 

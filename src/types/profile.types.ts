@@ -22,3 +22,8 @@ export interface IUpdateMyProfilePayload {
   image?: string;
   contactNumber?: string;
 }
+
+export interface IChangePasswordPayload {
+  oldPassword: string;
+  newPassword: string;
+}
