@@ -133,7 +133,7 @@ export function CustomerBookings({ bookings }: CustomerBookingsProps) {
                 </div>
 
                 <Button asChild variant="outline" size="sm">
-                  <Link href={`/dashboard/bookings/${booking.id}`}>
+                  <Link href={`/me/bookings/${booking.id}`}>
                     <Eye className="mr-2 size-4" />
                     View Details
                   </Link>

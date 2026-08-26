@@ -10,9 +10,9 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { bookingServerService } from "@/services/bookings/booking.server.service";
 import { CancelBookingButton } from "@/components/modules/bookings/CancelBookingButton";
 import { PayBookingButton } from "@/components/modules/bookings/PayBookingButton";
+import { bookingServerService } from "@/services/bookings/booking.server.service";
 
 interface BookingDetailsPageProps {
   params: Promise<{

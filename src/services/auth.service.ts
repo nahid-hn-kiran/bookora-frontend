@@ -45,9 +45,16 @@ const resetPassword = async (payload: IResetPasswordPayload) => {
   return response.data;
 };
 
+const logoutUser = async () => {
+  const response = await api.post("/auth/logout");
+
+  return response.data;
+};
+
 export const authService = {
   loginUser,
   registerUser,
   forgotPassword,
   resetPassword,
+  logoutUser,
 };
