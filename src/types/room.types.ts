@@ -37,3 +37,7 @@ export interface IUpdateRoomPayload {
   image?: string;
   status?: RoomStatus;
 }
+
+export interface IGetRoomsQuery {
+  venueId?: string;
+}
