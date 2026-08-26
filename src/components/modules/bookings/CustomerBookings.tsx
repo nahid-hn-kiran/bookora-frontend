@@ -48,6 +48,7 @@ function formatStatus(status: BookingStatus) {
 }
 
 export function CustomerBookings({ bookings }: CustomerBookingsProps) {
+  console.log(bookings);
   if (bookings.length === 0) {
     return (
       <div className="rounded-xl border border-dashed py-16 text-center">

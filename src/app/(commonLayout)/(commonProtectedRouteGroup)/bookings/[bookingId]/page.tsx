@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { bookingServerService } from "@/services/bookings/booking.server.service";
 import { CancelBookingButton } from "@/components/modules/bookings/CancelBookingButton";
+import { PayBookingButton } from "@/components/modules/bookings/PayBookingButton";
 
 interface BookingDetailsPageProps {
   params: Promise<{
@@ -203,6 +204,10 @@ export default async function BookingDetailsPage({
                 ${(+booking.totalAmount).toFixed(2)}
               </p>
             </div>
+
+            {booking.status === "PENDING" && (
+              <PayBookingButton bookingId={booking.id} />
+            )}
 
             {canCancel && <CancelBookingButton bookingId={booking.id} />}
           </CardContent>

@@ -5,9 +5,7 @@ import { CustomerBookings } from "@/components/modules/bookings/CustomerBookings
 import { bookingServerService } from "@/services/bookings/booking.server.service";
 
 export default async function BookingsPage() {
-  const response = await bookingServerService.getMyBookings();
-
-  const bookings = response.data ?? [];
+  const bookings = await bookingServerService.getMyBookings();
 
   return (
     <div className="space-y-6">
