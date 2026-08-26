@@ -12,6 +12,12 @@ export interface IUser {
   updatedAt: string;
 }
 
+export interface IUpdateUserPayload {
+  name?: string;
+  profilePhoto?: string;
+  status?: UserStatus;
+}
+
 export interface IGetUsersQuery {
   page?: number;
   limit?: number;
@@ -23,4 +29,31 @@ export interface IUpdateUserPayload {
   name?: string;
   profilePhoto?: string;
   status?: UserStatus;
+}
+
+export interface IAdmin {
+  id: string;
+  contactNumber: string | null;
+  createdAt: string;
+  updatedAt: string;
+
+  user: {
+    id: string;
+    name: string;
+    email: string;
+    photo: string | null;
+    role: UserRole;
+    status: UserStatus;
+    isDeleted: boolean;
+    createdAt: string;
+    updatedAt: string;
+  };
+}
+
+export interface IUpdateAdminPayload {
+  admin?: {
+    name?: string;
+    profilePhoto?: string;
+    contactNumber?: string;
+  };
 }

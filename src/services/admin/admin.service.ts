@@ -1,10 +1,6 @@
 import { api } from "@/lib/server-fetch";
 
-import type {
-  IGetUsersQuery,
-  IUpdateUserPayload,
-  IUser,
-} from "@/types/admin.types";
+import type { IAdmin, IGetUsersQuery, IUser } from "@/types/admin.types";
 
 export async function getAllUsers(query?: IGetUsersQuery) {
   const params = new URLSearchParams();
@@ -33,13 +29,16 @@ export async function getAllUsers(query?: IGetUsersQuery) {
 }
 
 export async function getUserById(userId: string) {
-  return api.get<IUser>(`/admins/users/${userId}`);
+  const result = api.get<IUser>(`/admins/users/${userId}`);
+  console.log(result);
+
+  return result;
 }
 
-export async function updateUser(userId: string, payload: IUpdateUserPayload) {
-  return api.patch<IUser>(`/admins/users/${userId}`, payload);
+export async function getAllAdmins() {
+  return api.get<IAdmin[]>("/admins");
 }
 
-export async function deleteUser(userId: string) {
-  return api.delete(`/admins/users/${userId}`);
+export async function getAdminById(adminId: string) {
+  return api.get<IAdmin>(`/admins/${adminId}`);
 }
