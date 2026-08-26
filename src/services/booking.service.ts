@@ -1,6 +1,6 @@
 import { api } from "@/lib/server-fetch";
 
-import type { IBooking } from "@/types/booking.types";
+import type { IBooking, ICreateBookingPayload } from "@/types/booking.types";
 
 export async function getAllBookings() {
   return api.get<IBooking[]>("/bookings");

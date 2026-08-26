@@ -33,7 +33,12 @@ const getTimeSlotById = async (timeSlotId: string) => {
   return response.data;
 };
 
+const getTimeSlotsByRoom = async (roomId: string) => {
+  return api.get<ITimeSlot[]>(`/time-slots?roomId=${roomId}`);
+};
+
 export const timeSlotServerService = {
   getTimeSlots,
   getTimeSlotById,
+  getTimeSlotsByRoom,
 };

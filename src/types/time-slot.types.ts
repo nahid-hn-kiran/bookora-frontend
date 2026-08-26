@@ -1,6 +1,9 @@
 export interface ITimeSlotRoom {
   id: string;
   name: string;
+  capacity: number;
+  price: number;
+  duration: number;
 }
 
 export interface ITimeSlot {

@@ -102,13 +102,14 @@ export default async function RoomDetailsPage({
           {/* Actions */}
           <div className="flex flex-col gap-3 border-t pt-6 sm:flex-row">
             <Button size="lg" asChild>
-              <Link href={`/bookings/create?roomId=${room.id}`}>
-                Book this room
-              </Link>
+              <Link href={`/rooms/${room.id}/book`}>Book this room</Link>
             </Button>
 
             <Button size="lg" variant="outline" asChild>
-              <Link href="/rooms">Browse other rooms</Link>
+              <Link href={`/venues/${room.venueId}`}>
+                <ArrowLeft className="mr-2 size-4" />
+                Back to venue
+              </Link>
             </Button>
           </div>
         </CardContent>

@@ -61,6 +61,12 @@ export interface IBooking {
   payment?: IBookingPayment | null;
 }
 
+export interface ICreateBookingPayload {
+  timeSlotId: string;
+  guestCount: number;
+  notes?: string;
+}
+
 export interface IUpdateBookingStatusPayload {
   status: BookingStatus;
 }
