@@ -1,11 +1,40 @@
-import { api } from "@/lib/server-fetch";
+import { api } from "@/lib/axios";
+import { ApiResponse } from "@/types/api.types";
 
-import type { IBooking, ICreateBookingPayload } from "@/types/booking.types";
+import type {
+  IBooking,
+  ICreateBookingPayload,
+  IUpdateBookingStatusPayload,
+} from "@/types/booking.types";
 
-export async function getAllBookings() {
-  return api.get<IBooking[]>("/bookings");
-}
+const createBooking = async (payload: ICreateBookingPayload) => {
+  const response = await api.post<ApiResponse<IBooking>>("/bookings", payload);
 
-export async function getBookingById(bookingId: string) {
-  return api.get<IBooking>(`/bookings/admin/${bookingId}`);
-}
+  return response.data;
+};
+
+const cancelBooking = async (bookingId: string) => {
+  const response = await api.post<ApiResponse<IBooking>>(
+    `/bookings/${bookingId}/cancel`,
+  );
+
+  return response.data;
+};
+
+const updateBookingStatus = async (
+  bookingId: string,
+  payload: IUpdateBookingStatusPayload,
+) => {
+  const response = await api.patch<ApiResponse<IBooking>>(
+    `/bookings/${bookingId}/status`,
+    payload,
+  );
+
+  return response.data;
+};
+
+export const bookingService = {
+  createBooking,
+  cancelBooking,
+  updateBookingStatus,
+};

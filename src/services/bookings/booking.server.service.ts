@@ -3,11 +3,15 @@ import { api } from "@/lib/server-fetch";
 import type { IBooking } from "@/types/booking.types";
 
 const getMyBookings = async () => {
-  return api.get<IBooking[]>("/bookings/my-bookings");
+  const response = await api.get<IBooking[]>("/bookings/my-bookings");
+
+  return response.data;
 };
 
 const getBookingById = async (bookingId: string) => {
-  return api.get<IBooking>(`/bookings/${bookingId}`);
+  const response = await api.get<IBooking>(`/bookings/${bookingId}`);
+
+  return response.data;
 };
 
 export const bookingServerService = {

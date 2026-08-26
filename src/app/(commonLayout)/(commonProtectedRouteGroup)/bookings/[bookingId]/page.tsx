@@ -56,9 +56,7 @@ export default async function BookingDetailsPage({
 }: BookingDetailsPageProps) {
   const { bookingId } = await params;
 
-  const response = await bookingServerService.getBookingById(bookingId);
-
-  const booking = response.data;
+  const booking = await bookingServerService.getBookingById(bookingId);
 
   const room = booking.timeSlot.room;
   const venue = room.venue;

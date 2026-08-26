@@ -33,3 +33,10 @@ export interface IUser {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface IAuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  token?: string | null;
+  user: IUser;
+}

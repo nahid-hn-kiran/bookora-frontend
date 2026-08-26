@@ -1,4 +1,5 @@
 import { api } from "@/lib/axios";
+import { ApiResponse } from "@/types/api.types";
 
 import type {
   IChangePasswordPayload,
@@ -7,7 +8,7 @@ import type {
 } from "@/types/profile.types";
 
 export async function updateMyProfile(payload: IUpdateMyProfilePayload) {
-  const response = await api.patch<IMyProfile>(
+  const response = await api.patch<ApiResponse<IMyProfile>>(
     "/auth/update-my-profile",
     payload,
   );
@@ -16,7 +17,10 @@ export async function updateMyProfile(payload: IUpdateMyProfilePayload) {
 }
 
 export async function changePassword(payload: IChangePasswordPayload) {
-  const response = await api.post("/auth/change-password", payload);
+  const response = await api.post<ApiResponse<unknown>>(
+    "/auth/change-password",
+    payload,
+  );
 
   return response.data;
 }
