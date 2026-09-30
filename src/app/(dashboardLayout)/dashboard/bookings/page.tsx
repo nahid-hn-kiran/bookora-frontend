@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { BookingStatusBadge } from "@/components/modules/auth/dashboard/bookings/BookingStatusBadge";
-import { getAllBookings } from "@/services/booking.service";
+import { getAllBookings } from "@/services/bookings/booking.server.service";
 
 function formatDate(date: string) {
   return new Intl.DateTimeFormat("en-US", {

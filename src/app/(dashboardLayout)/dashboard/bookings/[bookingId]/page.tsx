@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookingStatusBadge } from "@/components/modules/auth/dashboard/bookings/BookingStatusBadge";
 
 import { BookingStatusActions } from "@/components/modules/auth/dashboard/bookings/BookingStatusActions";
-import { getBookingById } from "@/services/booking.service";
+import { getBookingById } from "@/services/bookings/booking.server.service";
 
 interface BookingDetailsPageProps {
   params: Promise<{
@@ -41,9 +41,7 @@ export default async function BookingDetailsPage({
   const { bookingId } = await params;
   console.log(bookingId);
 
-  const response = await getBookingById(bookingId);
-
-  const booking = response.data;
+  const booking = await getBookingById(bookingId);
 
   if (!booking) {
     return (
