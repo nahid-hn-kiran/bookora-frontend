@@ -4,11 +4,12 @@ Frontend application for Bookora, an escape room booking and management platform
 
 ## Production
 
-**Live Application:** https://bookora-3gf4.onrender.com/
+**Live Application:** https://bookora-frontend-gold.vercel.app
 
-**Backend API:** https://bookora-api-rea1.onrender.com/
+**Backend API:** https://bookora-backend-delta.vercel.app  
+**Backend API Base:** https://bookora-backend-delta.vercel.app/api/v1
 
-The frontend and backend are deployed separately on Render.
+The frontend is paired with the Vercel serverless Express 5 backend.
 
 ## Overview
 
@@ -27,7 +28,7 @@ The Bookora frontend provides the user-facing interface for discovering venues a
 - Axios
 - Lucide React
 - Sonner
-- Render
+- Vercel
 
 ## Core Features
 
@@ -88,11 +89,7 @@ Run the development server:
 npm run dev
 ```
 
-Default local URL:
-
-```text
-http://localhost:3000
-```
+When running locally, use the URL printed by the Next.js development server.
 
 ## Production Build
 
@@ -108,16 +105,22 @@ npm start
 
 ## Backend Connection
 
-Production backend:
+The production application uses this API base URL:
 
 ```text
-https://bookora-api-rea1.onrender.com/
+https://bookora-backend-delta.vercel.app/api/v1
 ```
 
-For local development, configure the frontend API base URL to point to the local backend:
+Set this environment variable in the frontend's Vercel project:
 
-```text
-http://localhost:5000
+```env
+NEXT_PUBLIC_API_URL=https://bookora-backend-delta.vercel.app/api/v1
+```
+
+Set `FRONTEND_URL` in the backend's Vercel project to the deployed frontend origin:
+
+```env
+FRONTEND_URL=https://bookora-frontend-gold.vercel.app
 ```
 
 ## UI and Component System
