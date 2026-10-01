@@ -18,10 +18,17 @@ const getBookingById = async (bookingId: string) => {
   return response.data;
 };
 
-export { getAllBookings, getBookingById };
+const getAdminBookingById = async (bookingId: string) => {
+  const response = await api.get<IBooking>(`/bookings/admin/${bookingId}`);
+
+  return response.data;
+};
+
+export { getAllBookings, getBookingById, getAdminBookingById };
 
 export const bookingServerService = {
   getAllBookings,
   getMyBookings,
   getBookingById,
+  getAdminBookingById,
 };

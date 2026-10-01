@@ -143,11 +143,11 @@ export function Navbar({ user }: NavbarProps) {
           {!user ? (
             <>
               <Button variant="ghost" asChild>
-                <Link href="/login">Login</Link>
+                <Link href="/auth/login">Login</Link>
               </Button>
 
               <Button asChild>
-                <Link href="/register">Get Started</Link>
+                <Link href="/auth/register">Get Started</Link>
               </Button>
             </>
           ) : (
@@ -242,13 +242,13 @@ export function Navbar({ user }: NavbarProps) {
               {!user ? (
                 <>
                   <Button variant="outline" className="w-full" asChild>
-                    <Link href="/login" onClick={closeMobileMenu}>
+                    <Link href="/auth/login" onClick={closeMobileMenu}>
                       Login
                     </Link>
                   </Button>
 
                   <Button className="w-full" asChild>
-                    <Link href="/register" onClick={closeMobileMenu}>
+                    <Link href="/auth/register" onClick={closeMobileMenu}>
                       Get Started
                     </Link>
                   </Button>

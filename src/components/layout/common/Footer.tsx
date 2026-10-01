@@ -33,11 +33,11 @@ const footerLinks = [
     links: [
       {
         label: "My Bookings",
-        href: "/bookings",
+        href: "/me/bookings",
       },
       {
         label: "Profile",
-        href: "/profile",
+        href: "/me",
       },
     ],
   },
@@ -99,22 +99,6 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Bookora. All rights reserved.</p>
-
-          <div className="flex gap-4">
-            <Link
-              href="/privacy"
-              className="transition-colors hover:text-foreground"
-            >
-              Privacy
-            </Link>
-
-            <Link
-              href="/terms"
-              className="transition-colors hover:text-foreground"
-            >
-              Terms
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
